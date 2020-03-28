@@ -1,6 +1,10 @@
 import {
-  Component
+  Component,
+  OnInit
 } from '@angular/core';
+import {
+  PhotoService
+} from './photos/photo/photo.service';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +12,16 @@ import {
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
-  title = 'Gerenciador de fotos';
+export class AppComponent implements OnInit {
 
-  photos = [
-    {
-      url: 'https://3.bp.blogspot.com/-2KML1b7vcUQ/WIkTc6v2yaI/AAAAAAAAEwg/S57KnnZJt1QX8BfJymYCLqAgmC0HLKTYQCLcB/s320/8b6062f54b39290253eaef36f154727e.jpg',
-      description: 'Porco'
-    },
-    {
-      url: 'https://img1.topimagens.com/ti/animais-fofos/animais-fofos_003.jpg',
-      description: 'Porquinho'
-    }
-  ];
- 
+  photos: any[] = [];
+
+  constructor(private photoService: PhotoService) {}
+
+  ngOnInit(): void {
+    this.photoService
+      .listFromUser('flavio')
+      .subscribe(photos => this.photos = photos);
+
+  }
 }
