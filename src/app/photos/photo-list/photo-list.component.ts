@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PhotoService } from '../photo/photo.service';
 import { ActivatedRoute } from '@angular/router';
 import { Photo } from '../photo/photo';
 
@@ -13,24 +12,11 @@ export class PhotoListComponent implements OnInit {
   photos: Photo[] = [];
   filter = '';
 
-  nome ='flavio';
 
-  constructor(
-    private photoService: PhotoService,
-    private activateRoure: ActivatedRoute
-    ) { }
+  constructor(private activateRoure: ActivatedRoute) { }
 
   ngOnInit(): void {
-
-    const userName = this.activateRoure
-    .snapshot
-    .params
-    .userName;
-    
-    this.photoService
-      .listFromUser(userName)
-      .subscribe(photos => this.photos = photos);
-
+    this.photos = this.activateRoure.snapshot.data.photos;
   }
 
 }
