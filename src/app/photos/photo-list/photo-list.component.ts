@@ -13,6 +13,8 @@ export class PhotoListComponent implements OnInit {
   photos: Photo[] = [];
   filter = '';
 
+  nome ='flavio';
+
   constructor(
     private photoService: PhotoService,
     private activateRoure: ActivatedRoute
