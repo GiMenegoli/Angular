@@ -15,7 +15,7 @@ import {
 import {
   NotFoundComponent
 } from './errors/not-found/not-found.component';
-import { PhotoListResolver } from './photos/photo-list/photo-list.revolver';
+import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 
 const routes: Routes = [{
     path: 'user/:userName',
