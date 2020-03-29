@@ -5,6 +5,7 @@ import { PhotoFormComponent } from './photo-form/photo-form.component';
 import {PhotoListComponent} from './photo-list/photo-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PhotoComponent } from './photo/photo.component';
+import { PhotosComponent } from './photo-list/photos/photos.component';
 
 
 
@@ -12,7 +13,8 @@ import { PhotoComponent } from './photo/photo.component';
   declarations: [
     PhotoComponent,
     PhotoListComponent,
-    PhotoFormComponent
+    PhotoFormComponent,
+    PhotosComponent
   ],
   imports: [
     HttpClientModule,
