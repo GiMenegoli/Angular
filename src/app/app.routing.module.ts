@@ -21,13 +21,21 @@ import {
 import {
   SignInComponent
 } from './home/signin/signin.component';
-import { AuthGuard } from './core/auth/auth.guard';
+import {
+  AuthGuard
+} from './core/auth/auth.guard';
+import {
+  SignUpComponent
+} from './home/signup/signup.component';
 
-const routes: Routes = [
-  {
+const routes: Routes = [{
     path: '',
     component: SignInComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'signup',
+    component: SignUpComponent,
   },
   {
     path: 'user/:userName',
