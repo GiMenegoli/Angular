@@ -12,10 +12,9 @@ export class HeaderComponent {
     //guarda valor de observable
 
     user$: Observable<User>;
-    user: User;
+  
 
     constructor(userService:UserService){
         this.user$ = userService.getUser();
-        this.user$.subscribe(user => this.user = user);
     }
 }
